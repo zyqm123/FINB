@@ -1,33 +1,53 @@
-This repository contains the official implementation and datasets for the FINB algorithm, as presented in our paper.
+FINB: Core Code and Datasets
+
+This repository provides the official implementation of the FINB algorithm, as introduced in our paper. The code includes the essential components for dataset preparation, training, and evaluation.
 
 Installation
-Install the required dependencies using:
+Please install the required dependencies by running:
 
 bash
+'''
 pip install -r requirements.txt
+'''
+We recommend using Python ≥3.8 and CUDA ≥11.0 for GPU acceleration.
+
 Datasets
-We use mini-ImageNet as the single source dataset, and four target datasets: CUB, Cars, Places, and Plantae.
-For dataset setup and preprocessing, please refer to the CrossDomainFewShot repository.
+The experiments follow the standard Cross-Domain Few-Shot Learning (CD-FSL) setting:
 
-Code Overview
-The core implementation is organized into two main components:
+Source domain: mini-ImageNet
 
-FINB_pretraining.py: Code for model training
+Target domains: CUB, Cars, Places, Plantae
 
-FINB_finetuning: Code for meta-testing and evaluation
+Dataset setup and preprocessing are consistent with the https://github.com/hytseng0509/CrossDomainFewShot repository.
+
+Code Structure
+
+The core implementation is organized as follows:
+
+FINB_main.py
+
+Entry point for training and evaluation.
+
+Loads datasets, initializes pretrained models, and performs meta-training.
+
+FINB.py
+
+Implements the FINB algorithm.
+
+Includes intermediate domain construction and cross-domain knowledge transfer.
 
 Usage
-Training
-To train the FINB model, run:
+
+To evaluate FINB on a target domain, run:
 
 bash
-python FINB_pretraining.py --config configs/FINB.yaml
-Experiment parameters can be modified in configs/FINB.yaml.
+'''
+python FINB_main.py --config FINB.yaml
+'''
 
-Testing
-To evaluate the model, run:
+The configuration file specifies experimental settings, including datasets, model parameters, and training protocols.
 
-bash
-python FINB_finetuning.py --config configs/meta_test.yaml
 Reproducing Results
-To reproduce the results reported in the paper, execute the above training and testing commands in sequence.
+
+This repository contains the core implementation used in our paper.
+The complete codebase, including additional modules and utilities, will be released upon acceptance of the paper.
