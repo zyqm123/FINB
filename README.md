@@ -5,7 +5,6 @@ This repository provides the official implementation of the FINB algorithm, as i
 ## Installation
 Please install the required dependencies by running:
 
-bash
 ```
 pip install -r requirements.txt
 ```
@@ -32,7 +31,6 @@ The core implementation is organized as follows:
 
 To evaluate FINB on a target domain, run:
 
-bash
 ```
 python FINB_main.py --config FINB.yaml
 ```
