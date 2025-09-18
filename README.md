@@ -14,9 +14,9 @@ We recommend using Python ≥3.8 and CUDA ≥11.0 for GPU acceleration.
 ## Datasets
 The experiments follow the standard Cross-Domain Few-Shot Learning (CD-FSL) setting:
 
-Source domain: mini-ImageNet
+* Source domain: mini-ImageNet
 
-Target domains: CUB, Cars, Places, Plantae
+* Target domains: CUB, Cars, Places, Plantae
 
 Dataset setup and preprocessing are consistent with the [FWT](https://github.com/hytseng0509/CrossDomainFewShot) repository.
 
@@ -24,17 +24,9 @@ Dataset setup and preprocessing are consistent with the [FWT](https://github.com
 
 The core implementation is organized as follows:
 
-FINB_main.py
+* FINB_main.py：Entry point for training and evaluation. Loads datasets, initializes pretrained models, and performs meta-training.
 
-Entry point for training and evaluation.
-
-Loads datasets, initializes pretrained models, and performs meta-training.
-
-FINB.py
-
-Implements the FINB algorithm.
-
-Includes intermediate domain construction and cross-domain knowledge transfer.
+* FINB.py：Implements the FINB algorithm. Includes intermediate domain construction and cross-domain knowledge transfer.
 
 ## Usage
 
